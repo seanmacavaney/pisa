@@ -46,12 +46,12 @@ add_library(simdcomp STATIC ${CMAKE_CURRENT_SOURCE_DIR}/simdcomp/src/simdbitpack
 
 
 # Add TBB
-set(TBB_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/tbb/)
-include(${TBB_ROOT}/cmake/TBBBuild.cmake)
-tbb_build(
-    TBB_ROOT ${TBB_ROOT}
-    CONFIG_DIR TBB_DIR)
-# find_package(TBB REQUIRED tbb)
+# set(TBB_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/tbb/)
+# include(${TBB_ROOT}/cmake/TBBBuild.cmake)
+# tbb_build(
+#     TBB_ROOT ${TBB_ROOT}
+#     CONFIG_DIR TBB_DIR)
+find_package(TBB REQUIRED tbb)
 
 # Add ParallelSTL
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/parallelstl EXCLUDE_FROM_ALL)
